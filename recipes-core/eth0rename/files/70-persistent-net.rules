@@ -1,0 +1,4 @@
+SUBSYSTEM=="net"
+ACTION=="add"
+ATTR{address}=="00:14:2D:27:36:4F"
+NAME="eth0"

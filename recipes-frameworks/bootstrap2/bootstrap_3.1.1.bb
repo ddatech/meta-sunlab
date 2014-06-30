@@ -1,0 +1,33 @@
+# use a customized front-end framework for web applications
+
+DESCRIPTION = "Bootstrap is an HTML, CSS, and JS framework for developing responsive, mobile first projects on the web."
+SUMMARY = "Bootstrap framework"
+HOMEPAGE = "http://getbootstrap.com/"
+DEPENDS = "jquery"
+SECTION = "net"
+LICENSE = "Apache-2.0"
+PR = "r1"
+PRINC = "1"
+
+LIC_FILES_CHKSUM = "file://LICENSE;md5=eff226ae95d0516d6210ed77dfdf2dcc"
+SRC_URI[md5sum] = "6280e447a777c90440fbdca7c504fd9c"
+SRC_URI[sha256sum] = "77d72e99f947113cd55149900a736bd2c2cbec175ace6dd33c1b3d3fc51cbf81"
+
+FILESEXTRAPATHS_prepend := "${THISDIR}/files"
+# RDEPENDS_${PN} += ""
+
+S = "${WORKDIR}"
+SRC_URI = "file://bootstrap-3.1.1-dist.zip"
+
+# do_configure_append () {
+#     rm  ${S}/data/in/icudt50l.dat
+#     cp ${WORKDIR}/icudt50l.dat ${S}/data/in/
+# }
+
+do_install () {
+    install -d ${D}/${bindir} ${D}/${datadir}/max9526-gtk
+    install -m 0755 ${S}/max9526-gtk ${D}/${bindir}/
+    install -m 0644 ${S}/max9526.glade ${D}/${datadir}/max9526-gtk/
+}
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"
