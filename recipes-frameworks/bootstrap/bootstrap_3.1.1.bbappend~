@@ -1,0 +1,15 @@
+# use a customized front-end framework for web applications
+# http://getbootstrap.com/
+PRINC = "1"
+
+FILESEXTRAPATHS_prepend := "${THISDIR}/files"
+RDEPENDS_${PN} += ""
+
+SRC_URI = "${BASE_SRC_URI} file://bootstrap-3.1.1-dist.zip "
+
+do_configure_append () {
+    rm  ${S}/data/in/icudt50l.dat
+    cp ${WORKDIR}/icudt50l.dat ${S}/data/in/
+}
+
+PACKAGE_ARCH = "${MACHINE_ARCH}"

@@ -46,7 +46,6 @@ IMAGE_INSTALL_MACHINE_apalis-t30 = " \
     pciutils \
     ptpd \
     iproute2 \
-    canutils \
     lvds-ctrl \
     fs-init \
     util-linux-fstrim \
