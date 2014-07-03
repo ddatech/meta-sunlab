@@ -11,6 +11,6 @@ SRC_URI = " \
 "
 
 do_install() {
-    install -d ${D}/${prefix}/
-    install -m 0644 ${WORKDIR}/setstatic.sh ${D}/${prefix}/
+    install -d ${D}/${exec_prefix}/bin
+    install -m 0555 ${WORKDIR}/setstatic.sh ${D}/${exec_prefix}/bin
 }

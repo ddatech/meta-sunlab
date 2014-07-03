@@ -16,5 +16,5 @@ SRC_URI = " \
 
 do_install() {
     install -d ${D}/${localstatedir}/lib/connman/ethernet_00142d27364f_cable
-    install -m 0644 ${WORKDIR}/settings ${D}/${localstatedir}/lib/connman/ethernet_00142d27364f_cable
+    install -m 0664 ${WORKDIR}/settings.substitute ${D}/${localstatedir}/lib/connman/ethernet_00142d27364f_cable
 }

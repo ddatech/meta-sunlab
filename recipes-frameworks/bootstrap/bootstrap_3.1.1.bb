@@ -15,14 +15,23 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI = "file://bootstrap-${PV}-dist.zip \
 	   file://LICENSE \
-	\
+           \
 "
+
 LIC_FILES_CHKSUM = "file://../LICENSE;md5=4f068b5632f52fc355c5b93b75a82954"
 
-do_install () {
-    mkdir ${localstatedir}/www
-    cp -r ${WORKDIR}/bootstrap-${PV}-dist/ ${D}${localstatedir}/www
-}
 
-# install -d ${D}/${localstatedir}/www/js
-# install -m 0744 ${WORKDIR}/bootstrap-${PV}-dist/js ${D}/${localstatedir}/www/js
+do_install () {
+   
+    install -d "${D}${localstatedir}/www/cherokee/css"
+    install -d "${D}${localstatedir}/www/cherokee/js"
+    install -d "${D}${localstatedir}/www/cherokee/fonts"
+   
+    install -m 0744 -d ${D}${localstatedir}/www/cherokee/css
+    install -m 0744 ${WORKDIR}/bootstrap-${PV}-dist/css/* ${D}${localstatedir}/www/cherokee/css
+    install -m 0744 -d ${D}${localstatedir}/www/cherokee/js
+    install -m 0744 ${WORKDIR}/bootstrap-${PV}-dist/js/* ${D}${localstatedir}/www/cherokee/js
+    install -m 0744 -d ${D}${localstatedir}/www/cherokee/fonts
+    install -m 0744 ${WORKDIR}/bootstrap-${PV}-dist/fonts/* ${D}${localstatedir}/www/cherokee/fonts
+
+}

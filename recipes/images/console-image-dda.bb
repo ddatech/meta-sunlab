@@ -43,6 +43,7 @@ IMAGE_INSTALL_X11 = ""
 #    gst-plugins-good-meta
 #    gst-plugins-bad-meta
 #    gst-ffmpeg
+
 GSTREAMER = " \
     gstreamer \
     gst-plugins-base \
@@ -82,8 +83,11 @@ WEBSERVER = " \
     cherokee \
     rrdtool \
     jquery \
-    bootsrap \
     www \
+"
+
+CONFIG_AND_SCRIPTS = " \
+    setstatic \
 "
 
 IMAGE_INSTALL += " \
@@ -106,6 +110,7 @@ IMAGE_INSTALL += " \
     libpcre \
     libpcreposix \
     ${WEBSERVER} \
+    ${CONFIG_AND_SCRIPTS} \
 "
 
 

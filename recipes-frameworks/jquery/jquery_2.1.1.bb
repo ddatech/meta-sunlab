@@ -15,6 +15,6 @@ SRC_URI[sha256sum] = "874706b2b1311a0719b5267f7d1cf803057e367e94ae1ff7bf78c5450d
 SRC_URI = "http://code.jquery.com/jquery-${PV}.min.js"
 
 do_install() {
-    install -d ${D}/${localstatedir}/www/js
-    install -m 0775 ${WORKDIR}/jquery-${PV}.min.js ${D}/${localstatedir}/www/js
+    install -d ${D}/${localstatedir}/www/cherokee/js
+    install -m 0775 ${WORKDIR}/jquery-${PV}.min.js ${D}/${localstatedir}/www/cherokee/js
 }

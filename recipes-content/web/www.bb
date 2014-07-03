@@ -7,10 +7,13 @@ PR = "r1"
 PACKAGE_ARCH = "all"
 
 SRC_URI = " \
-    file://index.html \
+    file://bootstrap_layout.zip \
 "
 
-do_populate_sysroot() {
-    install -d ${D}/${localstatedir}/www
-    install -m 0755 ${WORKDIR}/index.html ${D}/${localstatedir}/www
+do_install() {
+    # creation of directory at destination
+    install -d ${D}/${localstatedir}/www/cherokee
+    install -m 0744 ${WORKDIR}/*.html ${D}/${localstatedir}/www/cherokee
+    cp -r ${WORKDIR}/library ${D}/${localstatedir}/www/cherokee/library
+
 }
