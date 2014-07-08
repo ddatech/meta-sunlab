@@ -79,11 +79,17 @@ GSTREAMER_append_tegra3 = " \
     gst-plugins-good-jpeg \
 "
 
-WEBSERVER = " \
+WEBSERVER_APACHE2 = " \
+    apache2 \
+    sqlite3 \
+    python \
+"
+
+WEBSERVER_CHEROKEE = " \
     cherokee \
     rrdtool \
+    WWW \
     jquery \
-    www \
 "
 
 CONFIG_AND_SCRIPTS = " \
@@ -109,7 +115,7 @@ IMAGE_INSTALL += " \
     v4l-utils \
     libpcre \
     libpcreposix \
-    ${WEBSERVER} \
+    ${WEBSERVER_APACHE2} \
     ${CONFIG_AND_SCRIPTS} \
 "
 
